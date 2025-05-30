@@ -14,7 +14,7 @@ echo "The rules with the IP ${OLD_CIDR_BLOCK} with ${NEW_CIDR_BLOCK}"
 
 # Fetch all EC2 instances
 
-export $AWS_REGION
+export AWS_REGION=$AWS_REGION
 instances=$(aws ec2 describe-instances --query 'Reservations[*].Instances[*].InstanceId' --output text)
 
 # Iterate through each instance to find associated security groups
